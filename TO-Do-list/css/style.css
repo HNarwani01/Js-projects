@@ -1,0 +1,80 @@
+:root{
+    --bg-color:#272727;
+    --bg-pending:rgba(255, 0, 0,0.7);
+    --bg-completed:rgba(0, 255, 0, 0.5);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.main{
+    width: 100vw;
+    padding: 0px 3vw;
+    height: 100dvh;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    z-index: -2;
+    position: fixed;
+}
+.to-do {
+    background-color: var(--bg-pending);
+    position: relative;
+    width: 50%;
+    text-align: center;
+}
+
+.to-do::before {
+    content: "";  /* Added content property for pseudo-elements */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    filter: blur(1px);  /* Adjust the blur value as needed */
+}
+
+.done{
+    background-color: var(--bg-completed);
+    position: relative;
+    width: 50%;
+    text-align: center;
+}
+.done::before {
+    content: "";  /* Added content property for pseudo-elements */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    filter: blur(1px);  /* Adjust the blur value as needed */
+}
+.arrow{
+    color: aliceblue;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+}
+.insideElement{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 25px;
+}
+input{
+    margin: 10px 0px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    height: 3dvh;
+    width: 50%;
+    padding: 0px 5px;
+}
