@@ -1,0 +1,48 @@
+:root{
+    --bg-color:#272727;
+    --font-color:aliceblue;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.main{
+    width: 100vw;
+    height: 100dvh;
+    background-color: var(--bg-color);
+}
+.game-title, .results, .display-result, .showTotalScore{
+    /* text-align: center; */
+    color: var(--font-color);
+    padding: 20px 10px;
+    /* margin: 20px 0px; */
+    text-transform: capitalize;
+}
+.move {
+    background: transparent;
+    border:3px solid var(--font-color) ;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 100px;
+    height: 100px;
+}
+.move img{
+    width: 80%;
+    height: 80%;
+}
+.display-result , .showTotalScore{
+    font-size: 22px;
+}
+.display-result img{
+    width: 50px;
+    height: 50px;
+}
+.reset, .auto-play{
+    width: 100px;
+    height: 50px;
+    text-transform: capitalize;
+    font-weight: bolder;
+    margin: 10px;
+}
