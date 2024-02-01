@@ -1,10 +1,11 @@
 const ticTakToe = {
     turnCheck: 'X',
     toBecontinued: true,
+    winner:'',
     score: {
         winX: 0,
         winO: 0,
-        tie: 0
+        wintie: 0
     },
     divbox: document.querySelectorAll('.input'),
     winarray: [
@@ -55,32 +56,39 @@ const ticTakToe = {
     },
     showWinner: function () {
         if (!this.toBecontinued) {
-            let winner = (this.turnCheck === 'O') ? 'X' : 'O';
-            document.querySelector('.winner').innerHTML = (`${winner} wins`)
-            this.renderScore(winner);
+            // this.winner = (this.turnCheck === 'O') ? 'X' : 'O';
+            if (this.turnCheck==='O') {
+                this.winner='X';
+            }else if(this.turnCheck==='X'){
+                this.winner='O';
+            }else{
+                this.winner = 'tie'
+            }
+            this.score[`win${this.winner}`] ++;
+            document.querySelector('.winner').innerHTML = (`${this.winner} wins`);
+            this.renderScore();
+            this.winner = ''
         }
         
     },
-    renderScore:function (winner) {
-        if (winner==='X') {
-            this.score.winX ++;
-            document.querySelector('.result-X').innerHTML=this.score.winX;
-        } else if(winner==='O'){
-            this.score.winO ++;
-            document.querySelector('.result-O').innerHTML=this.score.winX;
-        }else{
-
-        }
+    renderScore:function () {
+        document.querySelector('.result-X').innerHTML= this.score.winX;
+        document.querySelector('.result-O').innerHTML= this.score.winO;
+        document.querySelector('.result-tie').innerHTML= this.score.wintie;
+        
     },
     resetScore: function () {
         this.score.winX = 0;
-        this.score.tie = 0;
+        this.score.wintie = 0;
         this.score.winO = 0;
         this.divbox.forEach(val=>{
             val.innerHTML ='';
         })
         this.toBecontinued = true;
         this.turnCheck = 'X'
+        this.winner='';
+        document.querySelector('.winner').innerHTML=''
+        this.renderScore()
     },
     playAgain:function () {
         this.divbox.forEach(val=>{
@@ -88,6 +96,7 @@ const ticTakToe = {
         })
         this.toBecontinued = true;
         this.turnCheck = 'X'
+        this.winner='';
     }
 }
 
