@@ -22,10 +22,11 @@
             <div id="js-input-9" class="input js-input" data-id="9"></div>
         </div>
         <div class="result">
-            X Win :-<span class="result-x" > 0</span> <br>O Win :-<span class="result-O"> 0</span>
+            X Win :-<span class="result-X" > 0</span> <br>O Win :-<span class="result-O"> 0</span><br>
+            <span class="result-tie"></span>
             <p class="winner"></p>
-            <button class="reset">Play Again</button>
-            <button class="reset">Reset score</button>
+            <button class="reset" onclick="ticTakToe.playAgain()">Play Again</button>
+            <button class="reset" onclick="ticTakToe.resetScore()">Reset score</button>
         </div>
     </div>
     <script src="./js/script-2.js"></script>
