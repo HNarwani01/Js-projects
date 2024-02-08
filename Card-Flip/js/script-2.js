@@ -1,55 +1,55 @@
 const data = [
     {
         id: 1,
-        image: '../img/01.jpg'
+        image: './img/01.jpg'
     },
     {
         id: 2,
-        image: '../img/02.jpg'
+        image: './img/02.jpg'
     },
     {
         id: 3,
-        image: '../img/03.jpg'
+        image: './img/03.jpg'
     },
     {
         id: 4,
-        image: '../img/04.jpg'
+        image: './img/04.jpg'
     },
     {
         id: 5,
-        image: '../img/05.jpg'
+        image: './img/05.jpg'
     },
     {
         id: 6,
-        image: '../img/06.jpg'
+        image: './img/06.jpg'
     },
     {
         id: 7,
-        image: '../img/07.jpg'
+        image: './img/07.jpg'
     },
     {
         id: 8,
-        image: '../img/08.jpg'
+        image: './img/08.jpg'
     },
     {
         id: 9,
-        image: '../img/09.jpg'
+        image: './img/09.jpg'
     },
     {
         id: 10,
-        image: '../img/10.jpg'
+        image: './img/10.jpg'
     },
     {
         id: 11,
-        image: '../img/11.jpg'
+        image: './img/11.jpg'
     },
     {
         id: 12,
-        image: '../img/12.jpg'
+        image: './img/12.jpg'
     },
     {
         id: 13,
-        image: '../img/13.jpg'
+        image: './img/13.jpg'
     },
 ]
 function countToStart() {
@@ -120,6 +120,7 @@ function attachEventListener() {
     document.querySelectorAll(".js-box-flip").forEach(element =>{
         element.addEventListener("click",()=>{
             element.classList.replace("box","box-fliped");
+            flipGame.turnback.push(element);
             flipGame.init(element.innerHTML);
         })
     })
@@ -139,13 +140,20 @@ function unFlip(targetDiv) {
 }
 const flipGame={
     winArray:[],
+    turnback:[],
     init:function (element) {
         this.winArray.push(element)
         if (this.winArray.length===2) {
             if (this.winArray[0]===this.winArray[1]) {
-                alert('correct');
+                console.log('correct');
+                this.turnback=[];
             }else{
-                unFlip()
+                console.log('Incorrect');
+                setTimeout(() => {
+                    unFlip(this.turnback[0]);
+                    unFlip(this.turnback[1]);
+                    this.turnback=[];
+                }, 500);
             }
         }
     }
