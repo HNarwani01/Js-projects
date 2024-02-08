@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+.main{
+    width: 100vw;
+    height: 100dvh;
+    background-color: #272727;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.clock-box{
+    width: 100px;
+    aspect-ratio: 3/5;
+    border: 3px solid aliceblue;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: aliceblue;
+}
+.clock-box span{
+    font-size: 30px;
+    transition: all 0.3s ease-in-out;
+}
