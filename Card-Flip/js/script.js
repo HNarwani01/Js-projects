@@ -78,7 +78,6 @@ const createImages={
         }
         console.log("generate done");
     },
-    
     attachEventListeners: function() {
         const cards = document.querySelectorAll(".js-box-flip");
         cards.forEach(element => {
@@ -148,6 +147,10 @@ function countToStart() {
         flipGame.unFlipAll();
         flipGame.init();
       }, time*1000);
+    setTimeout(() => {
+        flipGame.flipAll();
+
+    }, 500);
       
 }
 function countToStartNext() {
