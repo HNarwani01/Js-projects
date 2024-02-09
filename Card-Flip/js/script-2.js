@@ -141,20 +141,32 @@ function unFlip(targetDiv) {
 const flipGame={
     winArray:[],
     turnback:[],
+    score:0,
     init:function (element) {
         this.winArray.push(element)
         if (this.winArray.length===2) {
             if (this.winArray[0]===this.winArray[1]) {
                 console.log('correct');
                 this.turnback=[];
+                this.winArray=[];
+                tempMusic.play();
+                this.score++;
+                if (this.score===8) {
+                    finalWin.play(); 
+                }
             }else{
                 console.log('Incorrect');
                 setTimeout(() => {
+                    this.winArray=[];
                     unFlip(this.turnback[0]);
                     unFlip(this.turnback[1]);
                     this.turnback=[];
+                    wrongMove.play();
                 }, 500);
             }
         }
     }
 }
+const tempMusic = new Audio("./src/temp-win.mp3");
+const wrongMove = new Audio("./src/wrong-move.mp3")
+const finalWin = new Audio("./src/final-win.mp3");
