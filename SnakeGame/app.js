@@ -3,7 +3,9 @@ const foodsound = new Audio("../music/food.mp3");
 const gameoversound = new Audio("./music/gameover.mp3");
 const movesound = new Audio("./music/move.mp3");
 const musicsound = new Audio("./music/music.mp3");
-let speed = 5;
+const leveUpSound = new Audio("./music/levelIncrease.mp3")
+let scoreDiv = document.querySelector('.score')
+let speed = 4;
 let score = 0;
 let lastPaintTime = 0;
 let snakeArr = [{ x: 13, y: 15 }];
@@ -47,9 +49,21 @@ function gameEngine() {
     musicsound.play();
     score = 0;
   }
+  // for increasing speed in the middle of the game
+  function levelup(score) {
+    if (score!==0 && score%10 ===0) {
+      speed++;
+      leveUpSound.play()
+    }
+  }
+
+
   // food is consumed score is increased and food generated at random
   if (snakeArr[0].x === food.x && snakeArr[0].y === food.y) {
     foodsound.play();
+    score++;
+    scoreDiv.innerHTML=score;
+    levelup(score);
     snakeArr.unshift({
       x: snakeArr[0].x + inputDir.x,
       y: snakeArr[0].y + inputDir.y,
