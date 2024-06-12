@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --light: #a7e6ff;
+  --light2: #3abef9;
+  --medium: #3572ef;
+  --dark: #050c9c;
+}
+.main {
+  width: 100%;
+  height: 100%;
+}
+.head {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  background-color: var(--light2);
+  align-items: center;
+  justify-content: center;
+}
+.midSection {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 4%;
+  height: 10vh;
+  background-color: #c5c5c5;
+}
+#inputWord {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+#Translate {
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: var(--medium);
+  color: #fff;
+  font-size: 20px;
+}
+.solution {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 10%;
+  gap: 5%;
+}
+.definition {
+  font-family: monospace;
+  font-size: 16px;
+}
+.audiobtn {
+  width: 50px;
+  height: 50px;
+  background: #c2dbf0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.fa-play {
+  font-size: 30px;
+}

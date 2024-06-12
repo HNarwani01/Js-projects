@@ -1,0 +1,56 @@
+[
+    {
+      "word": "protagonist",
+      "phonetic": "/pɹəˈtæ.ɡə.nɪst/",
+      "phonetics": [
+        {
+          "text": "/pɹəˈtæ.ɡə.nɪst/",
+          "audio": ""
+        },
+        {
+          "text": "/pɹoʊˈtæ.ɡə.nɪst/",
+          "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/protagonist-us.mp3",
+          "sourceUrl": "https://commons.wikimedia.org/w/index.php?curid=2049051",
+          "license": {
+            "name": "BY-SA 3.0",
+            "url": "https://creativecommons.org/licenses/by-sa/3.0"
+          }
+        }
+      ],
+      "meanings": [
+        {
+          "partOfSpeech": "noun",
+          "definitions": [
+            {
+              "definition": "(authorship) The main character, or one of the main characters, in any story, such as a literary work or drama.",
+              "synonyms": [],
+              "antonyms": [
+                "antagonist"
+              ]
+            },
+            {
+              "definition": "A leading person in a contest; a principal performer.",
+              "synonyms": [],
+              "antonyms": []
+            },
+            {
+              "definition": "An advocate or champion of a cause or course of action.",
+              "synonyms": [],
+              "antonyms": []
+            }
+          ],
+          "synonyms": [],
+          "antonyms": [
+            "antagonist"
+          ]
+        }
+      ],
+      "license": {
+        "name": "CC BY-SA 3.0",
+        "url": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "sourceUrls": [
+        "https://en.wiktionary.org/wiki/protagonist"
+      ]
+    }
+  ]
